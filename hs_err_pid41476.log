@@ -1,0 +1,218 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 266338304 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3469), pid=41476, tid=38712
+#
+# JRE version:  (17.0+35) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17+35-2724, mixed mode, emulated-client, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:TieredStopAtLevel=1 -Xverify:none -Dspring.output.ansi.enabled=always -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.3\lib\idea_rt.jar=62248:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.3\bin -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -Dfile.encoding=UTF-8 com.springBootExamples.DataApplication
+
+Host: Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz, 12 cores, 15G,  Windows 10 , 64 bit Build 22494 (10.0.22494.1000)
+Time: Wed Nov 10 22:32:16 2021 GTB Standart Saati elapsed time: 0.018683 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001cab2ee5180):  JavaThread "Unknown thread" [_thread_in_vm, id=38712, stack(0x0000006be6200000,0x0000006be6300000)]
+
+Stack: [0x0000006be6200000,0x0000006be6300000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x66f8ea]
+V  [jvm.dll+0x7ce224]
+V  [jvm.dll+0x7cf9ce]
+V  [jvm.dll+0x7d0033]
+V  [jvm.dll+0x242bb5]
+V  [jvm.dll+0x66c909]
+V  [jvm.dll+0x6613d2]
+V  [jvm.dll+0x30082b]
+V  [jvm.dll+0x307db6]
+V  [jvm.dll+0x357a0e]
+V  [jvm.dll+0x357c3f]
+V  [jvm.dll+0x2d7ae8]
+V  [jvm.dll+0x2d8a54]
+V  [jvm.dll+0x7a00a1]
+V  [jvm.dll+0x365781]
+V  [jvm.dll+0x77f59c]
+V  [jvm.dll+0x3e805f]
+V  [jvm.dll+0x3e9b01]
+C  [jli.dll+0x527b]
+C  [ucrtbase.dll+0x293cc]
+C  [KERNEL32.DLL+0x16ab0]
+C  [ntdll.dll+0x51edb]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffce2337818, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001cab2f35830 GCTaskThread "GC Thread#0" [stack: 0x0000006be6300000,0x0000006be6400000] [id=24768]
+  0x000001cab2f46c90 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000006be6400000,0x0000006be6500000] [id=37312]
+  0x000001cab2f476a0 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000006be6500000,0x0000006be6600000] [id=3708]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffce1b884c7]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001cab2edf6b0] Heap_lock - owner thread: 0x000001cab2ee5180
+
+Heap address: 0x0000000702400000, size: 4060 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000702400000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffce1f68c59]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (1 events):
+Event: 0.014 Loaded shared library C:\Users\asus\.jdks\openjdk-17\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff6e51d0000 - 0x00007ff6e51de000 	C:\Users\asus\.jdks\openjdk-17\bin\java.exe
+0x00007ffd27280000 - 0x00007ffd2748f000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffd25e80000 - 0x00007ffd25f3d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffd24b80000 - 0x00007ffd24f0c000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffd21830000 - 0x00007ffd218c2000 	C:\WINDOWS\SYSTEM32\apphelp.dll
+0x00007ffd24a00000 - 0x00007ffd24b11000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffd10db0000 - 0x00007ffd10dca000 	C:\Users\asus\.jdks\openjdk-17\bin\VCRUNTIME140.dll
+0x00007ffd10f90000 - 0x00007ffd10fa8000 	C:\Users\asus\.jdks\openjdk-17\bin\jli.dll
+0x00007ffd254b0000 - 0x00007ffd25656000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffd24740000 - 0x00007ffd24766000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffd05200000 - 0x00007ffd054a1000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22494.1000_none_23deebcec6cdf010\COMCTL32.dll
+0x00007ffd25f70000 - 0x00007ffd25f99000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffd26800000 - 0x00007ffd268a4000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffd24fd0000 - 0x00007ffd250e7000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffd24960000 - 0x00007ffd249fa000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffd25fa0000 - 0x00007ffd25fd1000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffd21750000 - 0x00007ffd2175c000 	C:\Users\asus\.jdks\openjdk-17\bin\vcruntime140_1.dll
+0x00007ffd04140000 - 0x00007ffd041cd000 	C:\Users\asus\.jdks\openjdk-17\bin\msvcp140.dll
+0x00007ffce18a0000 - 0x00007ffce245e000 	C:\Users\asus\.jdks\openjdk-17\bin\server\jvm.dll
+0x00007ffd265c0000 - 0x00007ffd2666e000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffd26060000 - 0x00007ffd26101000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffd26490000 - 0x00007ffd265af000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffd25f40000 - 0x00007ffd25f48000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffd1d9d0000 - 0x00007ffd1da04000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffd1cce0000 - 0x00007ffd1ccea000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffd21730000 - 0x00007ffd21739000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffd25da0000 - 0x00007ffd25e11000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffd237d0000 - 0x00007ffd237e8000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffd1ff80000 - 0x00007ffd1ff8a000 	C:\Users\asus\.jdks\openjdk-17\bin\jimage.dll
+0x00007ffd22100000 - 0x00007ffd22326000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffd26110000 - 0x00007ffd2648b000 	C:\WINDOWS\System32\combase.dll
+0x00007ffd09960000 - 0x00007ffd09991000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffd248d0000 - 0x00007ffd24951000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffd0fe10000 - 0x00007ffd0fe1e000 	C:\Users\asus\.jdks\openjdk-17\bin\instrument.dll
+0x00007ffd10d80000 - 0x00007ffd10da5000 	C:\Users\asus\.jdks\openjdk-17\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\asus\.jdks\openjdk-17\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22494.1000_none_23deebcec6cdf010;C:\Users\asus\.jdks\openjdk-17\bin\server
+
+VM Arguments:
+jvm_args: -XX:TieredStopAtLevel=1 -Xverify:none -Dspring.output.ansi.enabled=always -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.3\lib\idea_rt.jar=62248:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.3\bin -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -Dfile.encoding=UTF-8 
+java_command: com.springBootExamples.DataApplication
+java_class_path (initial): D:\Spring Examples\demo\Spring-Boot-Examples\spring-datajpa-postgresql\target\classes;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.5.6\spring-boot-starter-data-jpa-2.5.6.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-aop\2.5.6\spring-boot-starter-aop-2.5.6.jar;C:\Users\asus\.m2\repository\org\springframework\spring-aop\5.3.12\spring-aop-5.3.12.jar;C:\Users\asus\.m2\repository\org\aspectj\aspectjweaver\1.9.7\aspectjweaver-1.9.7.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.5.6\spring-boot-starter-jdbc-2.5.6.jar;C:\Users\asus\.m2\repository\com\zaxxer\HikariCP\4.0.3\HikariCP-4.0.3.jar;C:\Users\asus\.m2\repository\org\springframework\spring-jdbc\5.3.12\spring-jdbc-5.3.12.jar;C:\Users\asus\.m2\repository\jakarta\transaction\jakarta.transaction-api\1.3.3\jakarta.transaction-api-1.3.3.jar;C:\Users\asus\.m2\repository\jakarta\persistence\jakarta.persistence-api\2.2.3\jakarta.persistence-api-2.2.3.jar;C:\Users\asus\.m2\repository\org\hibernate\hibernate-core\5.4.32.Final\hibernate-core-5.4.32.Final.jar;C:\Users\asus\.m2\repository\org\jboss\logging\jboss-logging\3.4.2.Final\jboss-logging-3.4.2.Final.jar;C:\Users\asus\.m2\repository\org\javassist\javassist\3.27.0-GA\javassist-3.27.0-GA.jar;C:\Users\asus\.m2\repository\net\bytebuddy\byte-buddy\1.10.22\byte-buddy-1.10.22.jar;C:\Users\asus\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\asus\.m2\repository\org\jboss\jandex\2.2.3.Final\jandex-2.2.3.Final.jar;C:\Users\asus\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\asus\.m2\repository\org\dom4j\dom4j\2.1.3\dom4j-2.1.3.jar;C:\Users\asus\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;C:\Users\asus\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.5\jaxb-runtime-2.3.5.jar;C:\Users\asus\.m2\repository\org\glassfish\jaxb\txw2\2.3.5
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 10                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 266338304                                 {product} {ergonomic}
+     bool ManagementServer                         = true                                      {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4257218560                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 0                                      {pd product} {ergonomic}
+     bool ProfileInterpreter                       = false                                  {pd product} {command line}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4257218560                             {manageable} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\asus\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\PyCharm Community Edition 2021.2\bin;;C:\Program Files\JetBrains\WebStorm 2021.2.1\bin;;C:\Users\asus\AppData\Roaming\npm
+USERNAME=asus
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 22494 (10.0.22494.1000)
+OS uptime: 3 days 1:19 hours
+Hyper-V role detected
+
+CPU: total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 158 stepping 10 microcode 0xec, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush, clflushopt, hv
+
+Memory: 4k page, system-wide physical 16235M (2320M free)
+TotalPageFile size 16235M (AvailPageFile size 206M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 59M, peak: 313M
+
+vm_info: OpenJDK 64-Bit Server VM (17+35-2724) for windows-amd64 JRE (17+35-2724), built on Aug  5 2021 23:26:02 by "mach5one" with MS VC++ 16.8 (VS2019)
+
+END.
